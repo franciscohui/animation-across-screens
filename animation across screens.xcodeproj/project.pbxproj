@@ -13,6 +13,7 @@
 		0B4855381A5D6AA500AFEB94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B4855371A5D6AA500AFEB94 /* Images.xcassets */; };
 		0B48553B1A5D6AA500AFEB94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B4855391A5D6AA500AFEB94 /* LaunchScreen.xib */; };
 		0B4855471A5D6AA500AFEB94 /* animation_across_screensTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4855461A5D6AA500AFEB94 /* animation_across_screensTests.swift */; };
+		0BCB91571A63F5E1006C021E /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCB91561A63F5E1006C021E /* TransitionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		0B4855401A5D6AA500AFEB94 /* animation across screensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "animation across screensTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B4855451A5D6AA500AFEB94 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0B4855461A5D6AA500AFEB94 /* animation_across_screensTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = animation_across_screensTests.swift; sourceTree = "<group>"; };
+		0BCB91561A63F5E1006C021E /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				0B4855301A5D6AA500AFEB94 /* AppDelegate.swift */,
 				0B4855321A5D6AA500AFEB94 /* ViewController.swift */,
 				0B4855341A5D6AA500AFEB94 /* Main.storyboard */,
+				0BCB91561A63F5E1006C021E /* TransitionManager.swift */,
 				0B4855371A5D6AA500AFEB94 /* Images.xcassets */,
 				0B4855391A5D6AA500AFEB94 /* LaunchScreen.xib */,
 				0B48552E1A5D6AA500AFEB94 /* Supporting Files */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0BCB91571A63F5E1006C021E /* TransitionManager.swift in Sources */,
 				0B4855331A5D6AA500AFEB94 /* ViewController.swift in Sources */,
 				0B4855311A5D6AA500AFEB94 /* AppDelegate.swift in Sources */,
 			);
@@ -405,6 +409,7 @@
 				0B48554C1A5D6AA500AFEB94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0B48554D1A5D6AA500AFEB94 /* Build configuration list for PBXNativeTarget "animation across screensTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +418,7 @@
 				0B48554F1A5D6AA500AFEB94 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
