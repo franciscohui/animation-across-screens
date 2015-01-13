@@ -24,16 +24,28 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
         let toView = transitionContext.viewForKey(UITransitionContextToViewKey)!
         
         // set up from 2D transofrm that we'll use in the animation
-        let offScreenRight = CGAffineTransformMakeTranslation(container.frame.width, 0)
-        let offScreenLeft = CGAffineTransformMakeTranslation(-container.frame.width, 0)
+        let π : CGFloat = 3.14159265359
+        let offScreenRotateIn = CGAffineTransformMakeRotation(-π/2)
+        let offScreenRotateOut = CGAffineTransformMakeRotation(π/2)
+        
+        // set the start location of toView depending if we're present
+        toView.transform = self.presenting ? offScreenRotateIn : offScreenRotateOut
+        
+        // set the anchor point so that rotations happen from the top-left corner
+        toView.layer.anchorPoint = CGPoint(x: 0, y: 0)
+        fromView.layer.anchorPoint = CGPoint(x: 0, y: 0)
+        
+        // updating the anchor point also moves the position we have to move the center position to the top left to compenstate
+        toView.layer.position = CGPoint(x: 0, y: 0)
+        fromView.layer.position = CGPoint(x: 0, y: 0)
         
         // prepare the toView for the animation
         //check to see if presenting is true or false, then update the animation accordingly
         if (self.presenting){
-            toView.transform = offScreenRight
+            toView.transform = offScreenRotateIn
         }
         else{
-            toView.transform = offScreenLeft
+            toView.transform = offScreenRotateOut
         }
         
         // add to both view our view controller
@@ -52,10 +64,10 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
             // slide fromView off either the left or the right edge fo the screen
             // depending if we're presenting or dismissing this view
             if (self.presenting){
-                fromView.transform = offScreenLeft
+                fromView.transform = offScreenRotateOut
             }
             else {
-                fromView.transform = offScreenRight
+                fromView.transform = offScreenRotateIn
             }
             toView.transform = CGAffineTransformIdentity
             
@@ -67,7 +79,7 @@ class TransitionManager: NSObject, UIViewControllerAnimatedTransitioning, UIView
     
     // return how many seconds the transition animation will take
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
-        return 0.5
+        return 0.75
     }
     
     // MARK: UIViewControllerTransitioningDelegate protocol methods
